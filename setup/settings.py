@@ -32,7 +32,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", cast=bool, default=True)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default="list-to-do-19.onrender.com")
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default="listadetarefasltd.com,www.listadetarefasltd.com")
 
 # Application definition
 
