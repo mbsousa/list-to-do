@@ -9,7 +9,6 @@ chardet==4.0.0
 click==8.1.7
 crispy-bootstrap5==2024.2
 cryptography==3.3.2
-cupshelpers==1.0
 dbus-python==1.2.16
 distro==1.5.0
 distro-info==1.0+deb11u1
