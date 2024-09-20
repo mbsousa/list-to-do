@@ -1,6 +1,7 @@
 
 
-# Projeto: Lista de Tarefas
+# Projeto: Lista de Tarefas 📑
+![exemplo2](https://github.com/user-attachments/assets/5b2e3691-e82e-4ba7-a4f4-dfb304c02d58)
 
 ## Tecnologias Usadas
 
