@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 class TodoListView(ListView):
     model = Todo
+    template_name = 'todos/todo_list.html'
 
 class TodoCreateView(CreateView):
     model = Todo
