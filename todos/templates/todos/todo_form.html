@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}
+    {% if todo.pk %}
+    Editar Tarefa ∙ LTD Company 
+    {% else %}
+    LTD Company ∙ Nova Tarefa
+    {% endif %}
+{% endblock page_title %}
+
+
+{% block content %}
+    {% if todo.pk %}
+        <h1>Editar Tarefa</h1>
+        <br>
+    {% else %}
+        <h1>Nova Tarefa</h1>
+    {% endif %}
+
+    <div class="container p-5">
+        <form method="POST">
+            {% csrf_token %}
+
+            {{form|crispy}}
+
+            <br>
+            <button type="submit" class="btn btn-secondary btn-sm">Salvar</button>
+        </form>
+    </div>  
+{% endblock content %}
+
