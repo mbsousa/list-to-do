@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# list-to-do
-=======
-# Nome do Projeto
-
 Lista de Tarefas
 
 ## Tecnologias Usadas
@@ -62,4 +57,4 @@ python manage.py runserver
 - **Mantenha claro e conciso**: Use linguagem simples e evite jargões desnecessários.
 - **Formate o texto**: Use markdown para títulos, listas, e código para facilitar a leitura.
 - **Atualize conforme necessário**: À medida que seu projeto evolui, não esqueça de atualizar o README.
->>>>>>> 06b00c2 (first commit)
+
