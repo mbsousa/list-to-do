@@ -34,7 +34,6 @@ DEBUG = config("DEBUG", cast=bool, default=True)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default="list-to-do-17.onrender.com")
 
-
 # Application definition
 
 DJANGO_APPS = [
