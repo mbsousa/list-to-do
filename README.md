@@ -1,6 +1,6 @@
 
 
-## Lista de Tarefas
+# Projeto: Lista de Tarefas
 
 ## Tecnologias Usadas
 
@@ -36,16 +36,16 @@ python manage.py runserver
 # Acesse a aplicação em http://127.0.0.1:8000/.
 ```
 
-### Funcionalidades
+## Funcionalidades
 
 - Lista de tarefas
 - Adicionar tarefas
 - Editar tarefas
 - Excluir tarefas
 
-### Contribuição
+## Contribuição
 
-**Se você gostaria de contribuir, siga estas instruções.**
+**Se você gostaria de contribuir, siga estas instruções. 👇**
 
 ## Faça um fork do projeto
 
