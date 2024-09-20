@@ -15,6 +15,10 @@ from decouple import config, Csv
 from dj_database_url import parse as db_url
 import os
 
+from django.core.management import utils
+print(utils.get_random_secret_key())
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
