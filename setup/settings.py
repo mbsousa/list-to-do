@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ('127.0.0.1', 'localhost', 'listadetarefasltd.onrender.com')
 
@@ -41,7 +41,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://listadetarefasltd.onrender.com"
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Application definition
 
