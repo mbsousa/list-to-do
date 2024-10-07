@@ -44,20 +44,4 @@ python manage.py runserver
 - Editar tarefas
 - Excluir tarefas
 
-## Contribuição
-
-**Se você gostaria de contribuir, siga estas instruções. 👇**
-
-## Faça um fork do projeto
-
-- Crie sua feature branch (git checkout -b feature/AmazingFeature)
-- Faça o commit das suas alterações (git commit -m 'Add some AmazingFeature')
-- Faça o push para a branch (git push origin feature/AmazingFeature)
-- Abra um Pull Request
-
-### Dicas
-
-- **Mantenha claro e conciso**: Use linguagem simples e evite jargões desnecessários.
-- **Formate o texto**: Use markdown para títulos, listas, e código para facilitar a leitura.
-- **Atualize conforme necessário**: À medida que seu projeto evolui, não esqueça de atualizar o README.
 
