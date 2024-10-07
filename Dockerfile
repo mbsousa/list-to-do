@@ -1,18 +1,13 @@
-# Use a imagem oficial do Python
-FROM python:3.10-slim
+FROM python:3.11.6-slim-bullseye
 
-# Defina o diretório de trabalho dentro do container
-WORKDIR /app
+WORKDIR /home/app
 
-# Copie os arquivos de requirements e instale as dependências
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./requirements.txt .
 
-# Copie o restante da aplicação
+RUN pip install -r requirements.txt
+
 COPY . .
 
-# Exponha a porta que o serviço vai usar
 EXPOSE 8000
 
-# Comando para rodar a aplicação (ajuste conforme necessário)
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "setup.wsgi:application"]
+CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]

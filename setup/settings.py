@@ -11,13 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config, Csv
+from decouple import config
 from dj_database_url import parse as db_url
 import os
-
-from django.core.management import utils
-print(utils.get_random_secret_key())
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,26 +23,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY")
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ('127.0.0.1', 'localhost', 'listadetarefasltd.onrender.com')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
+CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default="").split(',')
 
-
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:8000",
-    "http://localhost:8000",
-    "https://listadetarefasltd.onrender.com"
-]
-
-CORS_ALLOW_ALL_ORIGINS = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-# Application definition
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -63,7 +51,7 @@ THIRD_PARTY_APPS = [
 ]
 
 MY_APPS = [
-    'todos',
+    'todos.apps.TodosConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
@@ -107,12 +95,11 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': config(
-    "DATABASE_URL", 
-    default=f'sqlite:///{BASE_DIR / "db.sqlite3"}', 
-    cast=db_url
+    "default": config(
+        "DATABASE_URL", default=f'sqlite:///{BASE_DIR / "db.sqlite3"}', cast=db_url
     )
 }
+
 
 
 # Password validation
@@ -155,7 +142,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
