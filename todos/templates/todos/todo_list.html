@@ -22,9 +22,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for todo in todo_list %}
+                        {% for index, todo in todo_list %}
                             <tr>
-                                <th scope="row">{{todo.pk}}</th>
+                                <th scope="row">{{index}}</th>
                                 <td>{{todo.titulo}}</td>
                                 <td>{{todo.criacao_dt}}</td>
                                 <td>{{todo.entrega_dt}}</td>
