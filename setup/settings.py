@@ -34,6 +34,7 @@ CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default="").split(',')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+print(ALLOWED_HOSTS)
 
 
 DJANGO_APPS = [
