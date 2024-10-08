@@ -1,19 +1,18 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-    Excluir  Tarefa     ∙ LTD Company
+    Excluir Tarefa ∙ LTD Company
 {% endblock page_title %}
 
 {% block content %}
-    <h1>Excluir Tarefa?</h1>
+    <div class="container">
+        <h1>Excluir Tarefa?</h1>
+        <p>Tem certeza que deseja excluir a tarefa: <strong>{{todo.titulo}}</strong>? </p>
 
-    <p>Tem certeza que deseja excluir a tarefa: <strong>{{todo.titulo}}</strong>? </p>
-
-    <form method="post">
-        {% csrf_token %}
-
-        <button type="submit" class="btn btn-danger">Excluir</button>
-        <a href="{% url "todo_list" %}" class="btn btn-primary">Cancelar</a>
-        
-    </form>
-    {% endblock content %} 
+        <form method="post" class="d-flex justify-content-between">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a href="{% url "todo_list" %}" class="btn btn-primary">Cancelar</a>
+        </form>
+    </div>
+{% endblock content %} 

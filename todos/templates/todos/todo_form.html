@@ -9,24 +9,18 @@
     {% endif %}
 {% endblock page_title %}
 
-
 {% block content %}
-    {% if todo.pk %}
-        <h1>Editar Tarefa</h1>
-        <br>
-    {% else %}
-        <h1>Nova Tarefa</h1>
-    {% endif %}
+    <div class="container">
+        {% if todo.pk %}
+            <h1>Editar Tarefa</h1>
+        {% else %}
+            <h1>Nova Tarefa</h1>
+        {% endif %}
 
-    <div class="container p-5">
-        <form method="POST">
+        <form method="POST" class="p-4 border rounded bg-light">
             {% csrf_token %}
-
             {{form|crispy}}
-
-            <br>
-            <button type="submit" class="btn btn-secondary btn-sm">Salvar</button>
+            <button type="submit" class="btn btn-secondary btn-sm mt-3">Salvar</button>
         </form>
     </div>  
 {% endblock content %}
-
