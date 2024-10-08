@@ -36,7 +36,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CSRF_TRUSTED_ORIGINS = [
     'https://listadetarefasltd.onrender.com',
-    'https://list-to-do-29.onrender.com',
+    'https://list-to-do-30.onrender.com',
 ]
 
 
