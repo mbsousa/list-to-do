@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
 CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default="").split(',')
@@ -34,7 +34,11 @@ CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default="").split(',')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-print(ALLOWED_HOSTS)
+CSRF_TRUSTED_ORIGINS = [
+    'https://listadetarefasltd.onrender.com',
+    'https://list-to-do-28.onrender.com',
+]
+
 
 
 DJANGO_APPS = [
