@@ -1,9 +1,12 @@
 
 
 # Projeto: Lista de Tarefas 📑
+Status: Finalizado ✅
 
-https://github.com/user-attachments/assets/8d89b7d0-bae1-4ffa-8e53-59dd96a9a1af
 
+![list](https://github.com/user-attachments/assets/9c4f6411-3aa3-4f7b-be8e-73f10dc874f8)
+
+> Uma aplicação web desenvolvida para gerenciar tarefas de forma simples e eficiente.
 
 ## Tecnologias Usadas
 
