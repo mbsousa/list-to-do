@@ -5,62 +5,48 @@
 {% endblock page_title %}
 
 {% block content %}
-    <h1>Lista de Tarefas</h1>
-    <br>
+     <div class="container">
+        <h1 class="mt-4">Lista de Tarefas</h1>
+        <br>
 
-    {% if todo_list %}
-    <div class="container p-5">
-        <table class="table table-bordered border-black" >
-            <thead>
-            <tr>
-                <th scope="col">-</th>
-                <th scope="col">Título</th>
-                <th scope="col">Data da Criação</th>
-                <th scope="col">Data de Entrega</th>
-                <th scope="col">Data de Finalização</th>
-                <th scope="col">Ações</th>
-            </tr>
-            </thead>
-            <tbody class="table-group-divider">
-            {% for todo in todo_list %}
-                <tr>
-                    <th scope="row">{{ forloop.counter }}</th>
-                    <td>{{todo.titulo}}</td>
-                    <td>{{todo.criacao_dt}}</td>
-                    <td>{{todo.entrega_dt}}</td>
-                    <td>{{todo.finalizacao_dt|default:"-"}}</td>
-                    <td>
-                        <a
-                            href="{% url "todo_update" pk=todo.pk %}" 
-                            class="btn btn-outline-primary btn-sm {% if todo.finalizacao_dt %}disabled{% endif %}"
-                            >
-                            Editar
-                        </a>
-                        <a 
-                            href={% url "todo_complete" pk=todo.pk %} 
-                            class="btn btn-outline-success btn-sm {% if todo.finalizacao_dt %}disabled{% endif %}"
-                            >
-                            Concluir
-                        </a>
-                        <a 
-                            href="{% url "todo_delete" pk=todo.pk %}" 
-                            class="btn btn-outline-danger btn-sm">
-                            Excluir
-                        </a>
-                        
-                    </td>
-                </tr>
-            {% endfor %} 
-            </tbody>
-        </table>
+        {% if todo_list %}
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Data da Criação</th>
+                        <th scope="col">Data de Entrega</th>
+                        <th scope="col">Data de Finalização</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for todo in todo_list %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{todo.titulo}}</td>
+                            <td>{{todo.criacao_dt}}</td>
+                            <td>{{todo.entrega_dt}}</td>
+                            <td>{{todo.finalizacao_dt|default:"-"}}</td>
+                            <td>
+                                <a href="{% url "todo_update" pk=todo.pk %}" class="btn btn-outline-primary btn-sm {% if todo.finalizacao_dt %}disabled{% endif %}">Editar</a>
+                                <a href="{% url "todo_complete" pk=todo.pk %}" class="btn btn-outline-success btn-sm {% if todo.finalizacao_dt %}disabled{% endif %}">Concluir</a>
+                                <a href="{% url "todo_delete" pk=todo.pk %}" class="btn btn-outline-danger btn-sm">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <h4>Não há tarefas cadastradas.</h4>
+            <p>Que tal adicionar uma?</p>
+        {% endif %}
+
+        <a href="{% url "todo_create" %}" class="btn btn-secondary">Nova Tarefa</a>
     </div>
-    {% else %}
-    <h4>Não há tarefas cadastradas.</h4>
-    <p>Que tal adicionar uma?</p>
-    {% endif %}
-
-    <a href="{% url "todo_create" %}" class="btn btn-secondary">Nova Tarefa</a>
-
 {% endblock content %}
 
 
